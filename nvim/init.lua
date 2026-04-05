@@ -1,4 +1,5 @@
 require("core.pack")
+require("core.keymaps")
 
 -- 2. Standard Mason Setup
 require("mason").setup()
