@@ -1,7 +1,7 @@
 require("core.pack")
 require("core.keymaps")
 
--- 2. Standard Mason Setup
+-- Mason setup and configuration
 require("mason").setup()
 require("mason-lspconfig").setup({
 })
@@ -26,10 +26,4 @@ require('blink.cmp').setup({
   signature = { enabled = true }
 })
 
--- Keybindings
 
--- Pressing 'ev' (Edit Vimrc) opens your config in a new vertical split
-vim.keymap.set('n', '<leader>ev', ':vsplit $MYVIMRC<CR>', { desc = 'Open init.lua' })
-
--- Pressing 'sv' (Source Vimrc) reloads the config immediately
-vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<CR>', { desc = 'Reload init.lua' })
