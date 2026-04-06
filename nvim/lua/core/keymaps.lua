@@ -17,7 +17,7 @@ vim.keymap.set('n', '<leader>ev', '<cmd>vsplit $MYVIMRC<CR>', { desc = 'Open ini
 vim.keymap.set('n', '<leader>sv', '<cmd>source $MYVIMRC<CR>', { desc = 'Reload init.lua' })
 
 -- NeoTree
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Toggle NeoTree' })
+vim.keymap.set('n', '<leader>ee', '<cmd>Neotree toggle<cr>', { desc = 'Toggle NeoTree' })
 
 -- Buffer splits
 vim.keymap.set('n', '<leader>bs', '<cmd>vsplit<cr>', { desc = 'Vertical Split' })
@@ -28,6 +28,12 @@ vim.keymap.set('n', '<leader>t', '<cmd>terminal<cr>', { desc = 'Open Terminal' }
 
 -- Git signs
 vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns blame<cr>', { desc = 'Toggle git blame' })
+
+-- Quit all
+vim.keymap.set('n', '<leader>q', '<cmd>qa<cr>', { desc = 'Quit All' })
+
+-- Save all
+vim.keymap.set('n', '<leader>w', '<cmd>wa<cr>', { desc = 'Save All' })
 
 -- Toggle diagnostics
 -- Create a function to toggle diagnostics
