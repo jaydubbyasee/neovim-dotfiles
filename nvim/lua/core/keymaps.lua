@@ -18,3 +18,10 @@ vim.keymap.set('n', '<leader>sv', '<cmd>source $MYVIMRC<CR>', { desc = 'Reload i
 
 -- NeoTree
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Toggle NeoTree' })
+
+-- Buffer splits
+vim.keymap.set('n', '<leader>bs', '<cmd>vsplit<cr>', { desc = 'Vertical Split' })
+vim.keymap.set('n', '<leader>bh', '<cmd>split<cr>', { desc = 'Horizontal Split' })
+
+-- Open Terminal
+vim.keymap.set('n', '<leader>t', '<cmd>terminal<cr>', { desc = 'Open Terminal' })
