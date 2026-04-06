@@ -30,10 +30,10 @@ vim.keymap.set('n', '<leader>t', '<cmd>terminal<cr>', { desc = 'Open Terminal' }
 vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns blame<cr>', { desc = 'Toggle git blame' })
 
 -- Quit all
-vim.keymap.set('n', '<leader>q', '<cmd>qa<cr>', { desc = 'Quit All' })
+vim.keymap.set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })
 
 -- Save all
-vim.keymap.set('n', '<leader>w', '<cmd>wa<cr>', { desc = 'Save All' })
+vim.keymap.set('n', '<leader>wa', '<cmd>wa<cr>', { desc = 'Save All' })
 
 -- Toggle diagnostics
 -- Create a function to toggle diagnostics
