@@ -55,3 +55,8 @@ require('neo-tree').setup({
 
 -- Lua-Line setup
 require('lualine').setup()
+
+-- Gitsigns
+require('gitsigns').setup({
+  current_line_blame = true, -- Toggle globally on startup
+})

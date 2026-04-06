@@ -1,7 +1,7 @@
 -- This file contains keymaps that we want to set on startup
 
 -- Time to wait for a mapped sequence to complete (in milliseconds)
-vim.opt.timeoutlen = 250
+vim.opt.timeoutlen = 300
 
 -- Set the leader key to space
 vim.g.mapleader = " "
