@@ -25,5 +25,12 @@ vim.pack.add({
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim"},
   { src = "https://github.com/saghen/blink.cmp" },
-  { src = "https://github.com/sphamba/smear-cursor.nvim" }
+  { src = "https://github.com/sphamba/smear-cursor.nvim" },
+  -- Dependency for neo-tree
+  { src = "https://github.com/MunifTanjim/nui.nvim" },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+  {
+    src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+    version = vim.version.range('3')
+  },
 })

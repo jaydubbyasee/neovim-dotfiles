@@ -47,3 +47,7 @@ require('smear_cursor').setup({
     smear_insert_mode = true,
 })
 
+-- Neo-tree setup
+require('neo-tree').setup({
+  -- options go here
+})
