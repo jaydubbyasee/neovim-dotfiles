@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 
 
 vim.pack.add({
+  { src = "https://github.com/rebelot/kanagawa.nvim.git" },
   { src = "https://github.com/williamboman/mason.nvim" },
   { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
