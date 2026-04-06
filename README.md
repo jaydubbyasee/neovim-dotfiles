@@ -33,3 +33,7 @@ Plenary is a foundational Lua library for Neovim that provides a massive collect
 ### Telescope
 
 telescope.nvim is a highly extendable fuzzy finder over lists. Built on the latest awesome features from neovim core. Telescope is centered around modularity, allowing for easy customization.
+
+### smear-cursor
+
+Neovim plugin to animate the cursor with a smear effect in all terminals. Inspired by Neovide's animated cursor.
