@@ -52,3 +52,6 @@ require('smear_cursor').setup({
 require('neo-tree').setup({
   -- options go here
 })
+
+-- Lua-Line setup
+require('lualine').setup()

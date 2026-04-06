@@ -34,6 +34,7 @@ vim.pack.add({
     src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
     version = vim.version.range('3')
   },
+  { src = "https://github.com/nvim-lualine/lualine.nvim", },
   -- Dependencies for barbar
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },

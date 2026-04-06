@@ -25,3 +25,6 @@ vim.keymap.set('n', '<leader>bh', '<cmd>split<cr>', { desc = 'Horizontal Split' 
 
 -- Open Terminal
 vim.keymap.set('n', '<leader>t', '<cmd>terminal<cr>', { desc = 'Open Terminal' })
+
+-- Git signs
+vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns blame<cr>', { desc = 'Toggle git blame' })

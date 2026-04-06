@@ -41,3 +41,11 @@ Neovim plugin to animate the cursor with a smear effect in all terminals. Inspir
 ### neo-tree
 
 neo-tree.nvim is a file explorer plugin that lets you browse the filesystem and other tree-like structures (buffers, Git status) in a sidebar panel. It supports floating windows, icons, Git integration, and is fully configurable via Lua.
+
+### barbar
+
+barbar is a tab manager
+
+### lualine
+
+lualine is a state of the art status line
