@@ -28,3 +28,21 @@ vim.keymap.set('n', '<leader>t', '<cmd>terminal<cr>', { desc = 'Open Terminal' }
 
 -- Git signs
 vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns blame<cr>', { desc = 'Toggle git blame' })
+
+-- Toggle diagnostics
+-- Create a function to toggle diagnostics
+local function toggle_diagnostics()
+    if vim.diagnostic.is_enabled() then
+        vim.diagnostic.enable(false)
+        vim.diagnostic.config({ virtual_text = false })
+        print("Diagnostics disabled")
+    else
+        vim.diagnostic.enable(true)
+        vim.diagnostic.config({ virtual_text = true })
+        print("Diagnostics enabled")
+    end
+end
+
+-- Create a user command to call it
+vim.api.nvim_create_user_command("DiagnosticToggle", toggle_diagnostics, {})
+vim.keymap.set('n', '<leader>td', '<cmd>DiagnosticToggle<cr>', { desc = 'Toggle diagnostics' })
