@@ -45,5 +45,20 @@ vim.pack.add({
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/romgrk/barbar.nvim" },
   -- Treesitter and related plugins
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+  {
+    src = "https://github.com/nvim-treesitter/nvim-treesitter",
+    version = "main"
+  },
+  -- Rust-specific plugins
+  {
+    src = 'https://github.com/mrcjkb/rustaceanvim',
+    -- To avoid being surprised by breaking changes,
+    -- I recommend you set a version range
+    version = vim.version.range('^9')
+  },
+  -- Dap and related plugins
+  { src = "https://github.com/rcarriga/nvim-dap-ui" },
+  { src = "https://github.com/mfussenegger/nvim-dap" },
+  { src = "https://github.com/nvim-neotest/nvim-nio" },
+  { src = "https://github.com/folke/lazydev.nvim" },
 })
