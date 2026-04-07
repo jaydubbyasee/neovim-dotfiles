@@ -8,10 +8,15 @@ vim.api.nvim_create_autocmd("PackChanged", {
     -- Check if the plugin being updated is 'blink.cmp'
     if ev.data.spec.name == "blink.cmp" and
       (ev.data.kind == "install" or ev.data.kind == "update") then
-    
+
       print("Running cargo build for blink.cmp...")
       local plugin_path = ev.data.path
       vim.system({"cargo", "build", "--release"}, { cwd = plugin_path }):wait()
+    elseif ev.data.spec.name == "nvim-treesitter" and
+      (ev.data.kind == "install" or ev.data.kind == "update") then
+
+      print("Running :TSUpdate for nvim-treesitter.nvim...")
+      vim.api.nvim_command('TSUpdate') -- This will trigger the Treesitter update process
     end
   end
 })
@@ -39,4 +44,6 @@ vim.pack.add({
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/romgrk/barbar.nvim" },
+  -- Treesitter and related plugins
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })

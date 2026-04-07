@@ -60,3 +60,6 @@ require('lualine').setup()
 require('gitsigns').setup({
   current_line_blame = true, -- Toggle globally on startup
 })
+
+--- Treesitter setup
+require('nvim-treesitter').install { 'rust', 'python', 'lua', 'javascript', 'typescript' }
