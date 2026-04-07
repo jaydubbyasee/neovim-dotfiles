@@ -1,3 +1,0 @@
-[submodule "binary_plugins/blink.cmp"]
-	path = binary_plugins/blink.cmp
-	url = git@github.com:saghen/blink.cmp.git
