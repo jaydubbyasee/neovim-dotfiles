@@ -5,13 +5,18 @@ require("core.appearance")
 -- Mason setup and configuration
 require("mason").setup()
 require("mason-lspconfig").setup({
+  -- mason-lspconfig v2 calls vim.lsp.enable() for every installed server.
+  -- rustaceanvim manages rust-analyzer itself, so starting it here too would
+  -- attach two rust-analyzer clients to every Rust buffer.
+  automatic_enable = {
+    exclude = { "rust_analyzer" },
+  },
 })
 
 -- Ensure blink.cmp is initialized
 require('blink.cmp').setup({
   -- 'default' for vibrant icons, 'mono' for a cleaner look
   appearance = {
-    use_nvim_cmp_as_default = true,
     nerd_font_variant = 'mono'
   },
 
@@ -62,7 +67,26 @@ require('gitsigns').setup({
 })
 
 --- Treesitter setup
-require('nvim-treesitter').install { 'rust', 'python', 'lua', 'javascript', 'typescript' }
+require('nvim-treesitter').install { 'rust', 'toml', 'python', 'lua', 'javascript', 'typescript' }
+
+-- The nvim-treesitter main branch no longer enables highlighting itself
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(ev)
+    if pcall(vim.treesitter.start, ev.buf) then
+      vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+  end,
+})
+
+-- crates.nvim: versions, features and completion in Cargo.toml (served over LSP so blink.cmp picks it up)
+require('crates').setup({
+  lsp = {
+    enabled = true,
+    actions = true,
+    completion = true,
+    hover = true,
+  },
+})
 
 -- Setup dap and dap-ui
 require("dapui").setup()
