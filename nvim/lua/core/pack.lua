@@ -24,13 +24,14 @@ vim.api.nvim_create_autocmd("PackChanged", {
 
 vim.pack.add({
   { src = "https://github.com/rebelot/kanagawa.nvim.git" },
-  { src = "https://github.com/williamboman/mason.nvim" },
-  { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
+  -- mason moved to the mason-org GitHub organization
+  { src = "https://github.com/mason-org/mason.nvim", version = vim.version.range('2') },
+  { src = "https://github.com/mason-org/mason-lspconfig.nvim", version = vim.version.range('2') },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   -- Dependency for telescope
   { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope.nvim"},
-  { src = "https://github.com/saghen/blink.cmp" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range('0.2') },
+  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range('1') },
   { src = "https://github.com/sphamba/smear-cursor.nvim" },
   -- Dependency for neo-tree
   { src = "https://github.com/MunifTanjim/nui.nvim" },
@@ -40,9 +41,8 @@ vim.pack.add({
     version = vim.version.range('3')
   },
   { src = "https://github.com/nvim-lualine/lualine.nvim", },
-  -- Dependencies for barbar
-  { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+  -- Dependencies for barbar (nvim-web-devicons is added above)
+  { src = "https://github.com/lewis6991/gitsigns.nvim", version = vim.version.range('2') },
   { src = "https://github.com/romgrk/barbar.nvim" },
   -- Treesitter and related plugins
   {
@@ -56,9 +56,12 @@ vim.pack.add({
     -- I recommend you set a version range
     version = vim.version.range('^9')
   },
+  -- Cargo.toml crate versions, features and completions
+  { src = "https://github.com/saecki/crates.nvim", version = vim.version.range('0.7') },
   -- Dap and related plugins
   { src = "https://github.com/rcarriga/nvim-dap-ui" },
-  { src = "https://github.com/mfussenegger/nvim-dap" },
+  -- nvim-dap moved to codeberg
+  { src = "https://codeberg.org/mfussenegger/nvim-dap" },
   { src = "https://github.com/nvim-neotest/nvim-nio" },
   { src = "https://github.com/folke/lazydev.nvim" },
 })
