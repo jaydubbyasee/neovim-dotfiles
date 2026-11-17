@@ -15,6 +15,16 @@ fi
 # Symlink configs
 TARGET="$SCRIPT_ROOT/nvim"
 LINK="$HOME/.config/nvim"
-if [ ! -e "$LINK" ]; then
-  ln -s "$TARGET" "$LINK" 
+if [ -L "$LINK" ] && [ "$(readlink "$LINK")" = "$TARGET" ]; then
+  echo "$LINK already points to $TARGET."
+else
+  # Back up whatever config is already there instead of silently skipping
+  if [ -e "$LINK" ] || [ -L "$LINK" ]; then
+    BACKUP="$LINK.bak.$(date +%Y%m%d%H%M%S)"
+    echo "Backing up existing $LINK to $BACKUP"
+    mv "$LINK" "$BACKUP"
+  fi
+  mkdir -p "$(dirname "$LINK")"
+  ln -s "$TARGET" "$LINK"
+  echo "Linked $LINK -> $TARGET"
 fi
