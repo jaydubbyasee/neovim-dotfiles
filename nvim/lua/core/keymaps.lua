@@ -52,3 +52,9 @@ end
 -- Create a user command to call it
 vim.api.nvim_create_user_command("DiagnosticToggle", toggle_diagnostics, {})
 vim.keymap.set('n', '<leader>td', '<cmd>DiagnosticToggle<cr>', { desc = 'Toggle diagnostics' })
+
+-- which-key
+vim.keymap.set('n', '<leader>?', function()
+  require('which-key').show({ global = false })
+end, { desc = 'Buffer-local keymaps' })
+vim.keymap.set('n', '<leader>K', '<cmd>WhichKey<cr>', { desc = 'All keymaps' })
