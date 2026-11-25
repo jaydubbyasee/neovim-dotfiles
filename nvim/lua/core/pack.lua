@@ -44,6 +44,8 @@ vim.pack.add({
   -- Dependencies for barbar (nvim-web-devicons is added above)
   { src = "https://github.com/lewis6991/gitsigns.nvim", version = vim.version.range('2') },
   { src = "https://github.com/romgrk/barbar.nvim" },
+  -- Popup showing available keymaps as you type
+  { src = "https://github.com/folke/which-key.nvim", version = vim.version.range('3') },
   -- Treesitter and related plugins
   {
     src = "https://github.com/nvim-treesitter/nvim-treesitter",

@@ -49,3 +49,7 @@ barbar is a tab manager
 ### lualine
 
 lualine is a state of the art status line
+
+### which-key
+
+which-key.nvim shows a popup of the available keymaps as you type. Press `<leader>` (space) and wait to see the leader mappings, `<leader>K` to browse all keymaps, or `<leader>?` for the mappings local to the current buffer.

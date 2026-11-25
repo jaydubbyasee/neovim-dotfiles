@@ -61,6 +61,25 @@ require('neo-tree').setup({
 -- Lua-Line setup
 require('lualine').setup()
 
+-- which-key: popup showing the keymaps available after the keys typed so far
+local which_key = require('which-key')
+which_key.setup({
+  preset = 'modern',
+  -- Popup delay (ms)
+  delay = 300,
+})
+
+-- Names for the leader key groups (individual mappings use their own `desc`)
+which_key.add({
+  { '<leader>b', group = 'Buffer splits' },
+  { '<leader>e', group = 'Explorer / Edit config' },
+  { '<leader>f', group = 'Find' },
+  { '<leader>g', group = 'Git' },
+  { '<leader>q', group = 'Quit' },
+  { '<leader>s', group = 'Source config' },
+  { '<leader>w', group = 'Write' },
+})
+
 -- Gitsigns
 require('gitsigns').setup({
   current_line_blame = true, -- Toggle globally on startup
