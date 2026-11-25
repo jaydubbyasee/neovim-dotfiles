@@ -1,3 +1,4 @@
+require("core.rust")
 require("core.pack")
 require("core.keymaps")
 require("core.appearance")
@@ -72,6 +73,7 @@ which_key.setup({
 -- Names for the leader key groups (individual mappings use their own `desc`)
 which_key.add({
   { '<leader>b', group = 'Buffer splits' },
+  { '<leader>d', group = 'Debug' },
   { '<leader>e', group = 'Explorer / Edit config' },
   { '<leader>f', group = 'Find' },
   { '<leader>g', group = 'Git' },

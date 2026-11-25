@@ -35,6 +35,21 @@ vim.keymap.set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })
 -- Save all
 vim.keymap.set('n', '<leader>wa', '<cmd>wa<cr>', { desc = 'Save All' })
 
+-- Debugging (dap is required lazily because this file loads before its setup)
+local function dap_map(lhs, module, action, desc)
+  vim.keymap.set('n', '<leader>d' .. lhs, function() require(module)[action]() end, { desc = desc })
+end
+dap_map('b', 'dap', 'toggle_breakpoint', 'Toggle breakpoint')
+dap_map('c', 'dap', 'continue', 'Start / continue')
+dap_map('n', 'dap', 'step_over', 'Step over')
+dap_map('i', 'dap', 'step_into', 'Step into')
+dap_map('o', 'dap', 'step_out', 'Step out')
+dap_map('t', 'dap', 'terminate', 'Terminate')
+dap_map('u', 'dapui', 'toggle', 'Toggle debug UI')
+
+-- Show diagnostics inline from startup
+vim.diagnostic.config({ virtual_text = true })
+
 -- Toggle diagnostics
 -- Create a function to toggle diagnostics
 local function toggle_diagnostics()
