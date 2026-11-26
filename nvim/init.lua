@@ -29,6 +29,14 @@ require('blink.cmp').setup({
     default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
 
+  -- Show docs (e.g. rustdoc from rust-analyzer) beside the completion menu
+  completion = {
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 200,
+    },
+  },
+
   -- Optional: Experimental signature help support
   signature = { enabled = true }
 })
